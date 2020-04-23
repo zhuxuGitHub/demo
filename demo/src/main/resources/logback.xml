@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <contextName>mylogdemo</contextName>
+
+    <!--定义变量-->
+    <!-- <property name="rootlevel" vluse="log.level.root"></property>-->
+    <!--这是主要的用来定义日志的输出，这里是输出到控制台-->
+    <appender  name="log1" class="ch.qos.logback.core.ConsoleAppender">
+        <!--展示格式-->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d  %contextName   [%thread] %-5level %logger{50} -[%file:%line]- %msg%n</pattern>
+        </layout>
+    </appender>
+
+    <appender name="log2" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d  -3  [%thread] %-5level %logger{50} -[%file:%line]- %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="log1"></appender-ref>
+       <!-- <appender-ref ref="log2"/>-->
+    </root>
+</configuration>
