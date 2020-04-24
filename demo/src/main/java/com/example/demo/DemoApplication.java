@@ -9,6 +9,7 @@ public class DemoApplication {
 //exclude= {DataSourceAutoConfiguration.class}
 	public static void main(String[] args) {
 		try {
+			//我在输入中文
 			SpringApplication.run(DemoApplication.class, args);
 		}catch (Exception o){
 			o.printStackTrace();
