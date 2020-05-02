@@ -22,8 +22,15 @@ public class UserController {
     @RequestMapping(value="/mcsr",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
     @ResponseBody
     public List<User> selectUser() {
-        String passWord = request.getParameter("passWord");
+        String passWord = request.getHeader("passWord");
         List<User> users = userService.selectUserByUsername(passWord);
+        return users;
+    }
+
+    @RequestMapping(value="/mcsrA",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public List<User> selectUserA() {
+        List<User> users = userService.selectUserByUserA();
         return users;
     }
 }

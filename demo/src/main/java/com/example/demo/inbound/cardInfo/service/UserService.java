@@ -15,4 +15,7 @@ public class UserService {
     public List<User> selectUserByUsername(String passWord) {
         return userDao.selectUserByUsername(passWord);
     }
+    public List<User> selectUserByUserA(){
+        return userDao.selectUserByUserA();
+    }
 }
